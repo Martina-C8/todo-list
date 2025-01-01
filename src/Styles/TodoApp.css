@@ -1,109 +1,192 @@
 /* Stile generale */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Contenitore principale */
-  .todo-app {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 90%;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Titolo */
-  .todo-app h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #555;
-  }
-  
-  /* Sezione di input */
-  .input-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .input-section input,
-  .input-section select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .input-section button {
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .input-section button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Lista delle attività */
-  .task-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .task-list li {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s;
-    cursor: pointer;
-  }
-  
-  .task-list li:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .task-list li.completed {
-    text-decoration: line-through;
-    color: #aaa;
-  }
-  
-  /* Pulsante di rimozione */
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenitore principale */
+.todo-app {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Titolo */
+.todo-app h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Sezione di input */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input,
+.input-section select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input-section button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Lista delle attività */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Stile dei task */
+.task-list li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.task-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* Pulsante di rimozione */
 .delete-button {
-    background: none;
-    border: none;
-    color: #ff4d4d;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  
-  .delete-button:hover {
-    color: #ff0000;
-  }
-  /* Media queries per dispositivi più piccoli */
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.delete-button:hover {
+  color: #ff0000;
+}
+
+/* Sezione categorie */
+.category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-section input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.category-section button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-section button:hover {
+  background-color: #218838;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Sottotask - visualizzati sotto il task, senza bordi strani */
+.subtask-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 0; /* Rimuovi il margine a sinistra */
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column; /* Disporre i sotto-task in una colonna */
+  gap: 10px; /* Distanza tra i sotto-task */
+}
+
+.subtask-item {
+  padding: 8px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start; /* Allinea i sotto-task a sinistra */
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.subtask-item span {
+  text-decoration: none;
+}
+
+.subtask-item span.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.subtask-item button {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.subtask-item button:hover {
+  color: #d9534f;
+}
+
+/* Media queries per dispositivi più piccoli */
 @media (max-width: 768px) {
   .todo-app {
     width: 300px;
